@@ -1,4 +1,6 @@
 {
+	"name": "caichuanhai/frame",
+    "description": "caichuanhai frame",
     "require": {
         "twig/twig": "^2.0",
         "illuminate/database": "^5.8"
