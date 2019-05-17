@@ -1,6 +1,10 @@
 {
 	"name": "caichuanhai/frame",
     "description": "caichuanhai frame",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "twig/twig": "^2.0",
         "illuminate/database": "^5.8"
