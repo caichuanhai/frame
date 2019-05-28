@@ -1,5 +1,9 @@
 <?php
 
 return [
-	'a' => 'sdf'
+
+	'session' => [
+		'driver' => 'redis'
+	]
+	
 ];

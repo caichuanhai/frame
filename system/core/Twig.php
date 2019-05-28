@@ -10,8 +10,6 @@ class Twig
 
 	function __construct()
 	{
-		require_once SITEPATH.'vendor/autoload.php';
-
 		$this->_loader = new \Twig\Loader\FilesystemLoader(VIWEPATH);
 		$this->_twig = new \Twig\Environment($this->_loader);
 	}

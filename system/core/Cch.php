@@ -1,23 +1,22 @@
 <?php if (!defined('SITEPATH')) exit('No direct script access allowed');
 
+/**
+ * composer第三方类库加载
+ */
+require_once SITEPATH.'vendor/autoload.php';
+
+/**
+ * 加载核心的公共函数
+ */
 require_once COREPATH.'Common.php';
 
-$router =& loadClass('Router', 'core');
+/**
+ * 加载基类
+ */
+loadClass('CCH_Controller', 'core', false);
 
-require_once SYSPATH.'core/Controller.php';
-
-$controllerFile = CONPATH.$router->getClassPath().$router->getClass().'.php';
-file_exists($controllerFile) OR exit('控制器'.$controllerFile.'不存在');
-
-
-loadClass('Twig', 'core');
-
-require_once $controllerFile;
-
-$class = $router->getClass();
-
-$method = $router->getMethod();
-
-$CCH = new $class();
-
-call_user_func_array(array(&$CCH, $method), $router->getParamArray());
+/**
+ * 运行路由
+ */
+if(is_file(CONFPATH.'routes.php')) include_once CONFPATH.'routes.php';
+caichuanhai\Router::run(CONPATH);
